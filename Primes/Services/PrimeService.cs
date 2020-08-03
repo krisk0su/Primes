@@ -42,7 +42,7 @@ namespace WebApplication1.Services
         public IReturnObj findPrime(long initialValue)
         {
             this.initialValue = initialValue;
-            this.response = new LongPrimeReturn();
+            this.response = new Parent();
             this.response = nextPrime();
             return this.response;
         }
