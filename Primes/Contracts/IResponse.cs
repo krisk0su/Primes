@@ -1,6 +1,6 @@
-﻿namespace WebApplication1.Contracts
+﻿namespace Primes.Contracts
 {
-    public interface IReturnObj
+    public interface IResponse
     {
          string initialValue { get; set; }
          bool isInitialValuePrime { get; set; }

@@ -1,9 +1,8 @@
-﻿using WebApplication1.Contracts;
-
-namespace WebApplication1.Services
+﻿namespace Primes.Services
 {
+    using Contracts;
     public interface IPrimeService
     {
-        public IReturnObj findPrime(long number);
+        public IResponse FindPrime(long number);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.ViewModels
+﻿namespace Primes.ViewModels
 {
     public class LongPrime
     {

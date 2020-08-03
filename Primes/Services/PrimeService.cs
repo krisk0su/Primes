@@ -1,15 +1,14 @@
-﻿using Primes.Contracts;
-using WebApplication1.Contracts;
-
-namespace WebApplication1.Services
+﻿namespace Primes.Services
 {
+    using Contracts;
+
     public class PrimeService:IPrimeService
     {
         private long initialValue;
-        private IReturnObj response { get; set; }
-        private IReturnObj nextPrime()
+        private IResponse response { get; set; }
+        private IResponse nextPrime()
         {
-            IReturnObj result = new Parent();
+            IResponse result = new Response();
             long prime = this.initialValue;
             bool found = false;
             while (!found)
@@ -39,10 +38,10 @@ namespace WebApplication1.Services
             result.errorMessage = "";
             return result;
         }
-        public IReturnObj findPrime(long initialValue)
+        public IResponse FindPrime(long initialValue)
         {
             this.initialValue = initialValue;
-            this.response = new Parent();
+            this.response = new Response();
             this.response = nextPrime();
             return this.response;
         }

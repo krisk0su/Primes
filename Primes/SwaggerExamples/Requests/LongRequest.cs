@@ -1,8 +1,7 @@
-﻿using Swashbuckle.AspNetCore.Filters;
-using WebApplication1.ViewModels;
-
-namespace WebApplication1.SwaggerExamples.Requests
+﻿namespace Primes.SwaggerExamples.Requests
 {
+    using Swashbuckle.AspNetCore.Filters;
+    using ViewModels;
     public class LongRequest : IExamplesProvider<LongPrime>
     {
         public LongPrime GetExamples()

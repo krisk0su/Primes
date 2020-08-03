@@ -1,10 +1,8 @@
-﻿using WebApplication1.Contracts;
-
-namespace Primes.Contracts
+﻿namespace Primes.Contracts
 {
-    public  class Parent:IReturnObj
+    public  class Response:IResponse
     {
-        public Parent()
+        public Response()
         {
             this.initialValue = "0";
             this.isInitialValuePrime = false;

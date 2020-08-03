@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Contracts;
-using WebApplication1.ErrorMsgs;
-using WebApplication1.Services;
-using WebApplication1.ViewModels;
-
-namespace WebApplication1.Controllers
+﻿namespace Primes.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Contracts;
+    using ErrorMsgs;
+    using Services;
+    using ViewModels;
+
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
@@ -13,9 +13,9 @@ namespace WebApplication1.Controllers
     {
 
         private readonly IPrimeService prmService;
-        public PrimesController(IPrimeService prmService)
+        public PrimesController(IPrimeService primeService)
         {
-            this.prmService = prmService;
+            this.prmService = primeService;
         }
         // GET: api/<PrimesController>
         [HttpGet]
@@ -39,7 +39,7 @@ namespace WebApplication1.Controllers
         public ActionResult<LongPrimeReturn> LongPrime([FromBody] LongPrime prime)
         {
             LongPrimeReturn response = new LongPrimeReturn();
-            IReturnObj res = this.prmService.findPrime(prime.Prime);
+            IResponse res = this.prmService.FindPrime(prime.Prime);
             response = (LongPrimeReturn)this.mapProps(response, res);
             return response;
         }
@@ -72,12 +72,12 @@ namespace WebApplication1.Controllers
                 return response;
 
             }
-            IReturnObj res = this.prmService.findPrime(lngPrime);
+            IResponse res = this.prmService.FindPrime(lngPrime);
             response = (StrPrimeReturn)this.mapProps(response, res);
             return response;
         }
 
-        private IReturnObj mapProps(IReturnObj response, IReturnObj res)
+        private IResponse mapProps(IResponse response, IResponse res)
         {
             response.initialValue = res.initialValue;
             response.isInitialValuePrime = res.isInitialValuePrime;

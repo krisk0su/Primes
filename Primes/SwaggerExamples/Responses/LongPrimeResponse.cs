@@ -1,6 +1,6 @@
 ﻿using Swashbuckle.AspNetCore.Filters;
 
-namespace WebApplication1.SwaggerExamples.Responses
+namespace Primes.SwaggerExamples.Responses
 {
     public class LongPrimeResponse : IExamplesProvider<LongPrimeReturn>
     {

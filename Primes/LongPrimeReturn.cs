@@ -1,8 +1,8 @@
 ﻿using Primes.Contracts;
 
-namespace WebApplication1
+namespace Primes
 {
-    public class LongPrimeReturn : Parent
+    public class LongPrimeReturn : Response
     {
     }
 }

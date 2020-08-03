@@ -1,8 +1,7 @@
-﻿using Primes.Contracts;
+﻿namespace Primes {
+    using Contracts;
 
-namespace WebApplication1
-{
-    public class StrPrimeReturn: Parent
+    public class StrPrimeReturn: Response
     {
        
     }
